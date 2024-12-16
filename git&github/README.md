@@ -1,3 +1,4 @@
+### Git & Github
 No Git, existem diversos códigos e comandos usados para versionamento de código. Aqui estão alguns dos mais usados e suas funções:
 O Git é uma ferramenta essencial para o versionamento de códigos, amplamente utilizada em projetos de software. Abaixo estão descritos os principais comandos e técnicas para utilizá-lo de forma eficiente. É um sistema que grava as mudanças feitas em nossos arquivos ao longo do tempo por meio de “snapshots”
 
@@ -57,19 +58,19 @@ git rm —cached index.html
 
 Ignorar arquivos
 
-**### 1. **Configuração Inicial****
+ 1. **Configuração Inicial**
 
 - git config --global user.name "Seu Nome": Configura o nome do usuário.
 
 - git config --global user.email "seu.email@dominio.com": Configura o email do usuário.
 
-**### 2. **Criação e Inicialização de Repositório****
+ 2. **Criação e Inicialização de Repositório****
 
 - git init: Inicializa um novo repositório Git em um diretório.
 
 - git clone <url>: Clona um repositório remoto para o seu ambiente local.
 
-**### 3. **Gerenciamento de Arquivos****
+ 3. **Gerenciamento de Arquivos****
 
 - git add <arquivo>: Adiciona um arquivo para o próximo commit.
 
@@ -77,13 +78,13 @@ Ignorar arquivos
 
 - git rm <arquivo>: Remove um arquivo do repositório e do diretório local.
 
-**### 4. **Committing (Salvamento de Alterações)****
+ 4. **Committing (Salvamento de Alterações)****
 
 - git commit -m "mensagem": Faz um commit das mudanças adicionadas com uma mensagem descritiva.
 
 - git commit --amend: Altera o último commit (útil para corrigir mensagens ou adicionar arquivos).
 
-**### 5. **Visualização do Histórico****
+ 5. **Visualização do Histórico****
 
 - git log: Mostra o histórico de commits.
 
@@ -93,7 +94,7 @@ Ignorar arquivos
 
 - git status: Mostra o estado dos arquivos (modificados, adicionados, deletados).
 
-**### 6. **Branching e Merging (Trabalhando com Ramificações)****
+ 6. **Branching e Merging (Trabalhando com Ramificações)****
 
 - git branch: Mostra as branches (ramificações) do projeto.
 
@@ -103,7 +104,7 @@ Ignorar arquivos
 
 - git merge <nome-branch>: Mescla a branch especificada com a branch atual.
 
-**### 7. **Trabalho Remoto (Repositórios Remotos)****
+ 7. **Trabalho Remoto (Repositórios Remotos)****
 
 - git remote add origin <url>: Adiciona um repositório remoto.
 
@@ -111,19 +112,19 @@ Ignorar arquivos
 
 - git pull: Puxa as atualizações do repositório remoto e as mescla no repositório local.
 
-**### 8. **Stash (Armazenamento Temporário)****
+ 8. **Stash (Armazenamento Temporário)****
 
 - git stash: Salva temporariamente mudanças que não estão prontas para serem commitadas.
 
 - git stash apply: Restaura as mudanças que foram salvas com git stash.
 
-**### 9. **Rebase e Cherry-Pick****
+ 9. **Rebase e Cherry-Pick**
 
 - git rebase <branch>: Reaplica commits da branch atual em cima da branch especificada.
 
 - git cherry-pick <commit>: Aplica um commit específico de outro branch na branch atual.
 
-**### 10. **Reset e Revert (Desfazer Alterações)****
+ 10. **Reset e Revert (Desfazer Alterações)**
 
 - git reset --hard <commit>: Reseta para um commit específico, apagando as mudanças feitas após ele.
 
@@ -133,7 +134,7 @@ Esses são os principais comandos para manipular e versionar código no Git.
 
 O Git oferece diversos recursos avançados que permitem um controle mais refinado e otimizado do versionamento de código. Esses comandos e técnicas são utilizados em cenários mais complexos, geralmente quando se trabalha com grandes equipes ou se deseja maior controle sobre o histórico de commits e fluxo de trabalho. A seguir, estão alguns dos usos avançados mais importantes em Git:
 
-**### 1. **Squash (Unir Commits)****
+ 1. **Squash (Unir Commits)**
 
 - ****Objetivo****: Combina vários commits em um só, tornando o histórico de commits mais limpo e coeso.
 
@@ -141,10 +142,10 @@ O Git oferece diversos recursos avançados que permitem um controle mais refinad
 
 bash
 
-git rebase -i HEAD~3  # Exemplo: combinando os últimos 3 commits
+``git rebase -i HEAD~3`` # Exemplo: combinando os últimos 3 commits
 
 
-**### 2. **Rebase (Reaplicar Commits)****
+ 2. **Rebase (Reaplicar Commits)**
 
 - ****Objetivo****: Move ou reaplica commits de uma branch sobre outra, criando um histórico linear e evitando merges com commits adicionais.
 
@@ -154,41 +155,41 @@ git rebase -i HEAD~3  # Exemplo: combinando os últimos 3 commits
 
 bash
 
-git checkout feature-branch
+```git checkout feature-branch``
 
-git rebase main
-
+``git rebase main``
+`
 
 Isso reaplicaria todos os commits da feature-branch sobre a main.
 
-**### 3. **Cherry-Pick (Aplicar Commits Selecionados)****
+ 3. **Cherry-Pick (Aplicar Commits Selecionados)**
 
 - ****Objetivo****: Permite aplicar um commit específico de uma branch em outra sem mesclar todo o conteúdo.
 
-- ****Comando****: git cherry-pick <commit>
+- ****Comando****:``git cherry-pick <commit>``
 
 Exemplo:
 
 bash
 
-git cherry-pick abc1234  # Commit específico de outra branch
+``git cherry-pick abc1234`` # Commit específico de outra branch
 
 
-**### 4. **Bisect (Buscar Commits com Erros)****
+ 4. **Bisect (Buscar Commits com Erros)**
 
 - ****Objetivo****: Ajuda a encontrar qual commit introduziu um bug ou falha. É um processo de busca binária que testa commits até encontrar o culpado.
 
-- ****Comando****: git bisect start
+- ****Comando****: ``git bisect start``
 
 - Passos:
 
-1. Marcar o commit com bug: git bisect bad
+1. Marcar o commit com bug: ``git bisect bad``
 
-2. Marcar um commit funcional: git bisect good <commit>
+2. Marcar um commit funcional: ``git bisect good <commit>``
 
 3. Git irá iterar entre os commits até encontrar o causador do bug.
 
-**### 5. **Submodules (Módulos Git dentro de Git)****
+ 5. **Submodules (Módulos Git dentro de Git)**
 
 - ****Objetivo****: Gerencia repositórios Git dentro de outros repositórios, útil para projetos que dependem de bibliotecas externas ou subprojetos.
 
@@ -198,12 +199,12 @@ git cherry-pick abc1234  # Commit específico de outra branch
 
 bash
 
-git submodule add https://github.com/exemplo/repo caminho/para/repo
+``git submodule add https://github.com/exemplo/repo caminho/para/repo``
 
 
 Para atualizar submódulos: git submodule update --init --recursive
 
-**### 6. **Worktrees (Trabalhar com Múltiplas Branches no Mesmo Repositório)****
+ 6. **Worktrees (Trabalhar com Múltiplas Branches no Mesmo Repositório)**
 
 - ****Objetivo****: Permite criar múltiplas cópias (worktrees) de um repositório Git, cada uma em uma branch diferente, sem precisar de clones extras.
 
@@ -216,7 +217,7 @@ bash
 git worktree add ../nova-branch feature-branch
 
 
-**### 7. **Hooks (Automação de Tarefas)****
+ 7. **Hooks (Automação de Tarefas)**
 
 - ****Objetivo****: Git hooks são scripts que podem ser executados automaticamente em certos eventos, como pre-commit, post-merge, ou pre-push. São úteis para automações como linting, testes automatizados ou integração contínua.
 
@@ -224,7 +225,7 @@ git worktree add ../nova-branch feature-branch
 
 Crie o arquivo .git/hooks/pre-commit e insira um script para rodar testes antes de cada commit.
 
-**### 8. **Reflog (Recuperação de Commits Perdidos)****
+ 8. **Reflog (Recuperação de Commits Perdidos)**
 
 - ****Objetivo****: Registra todas as mudanças feitas no repositório local, inclusive aquelas que não aparecem no git log, como commits que foram "perdidos" após um reset ou rebase.
 
@@ -239,7 +240,7 @@ git reflog  # Ver histórico de todos os commits e referências
 git checkout HEAD@{3}  # Retorna ao estado anterior de 3 referências atrás
 
 
-**### 9. **Reset vs. Revert vs. Checkout (Gerenciamento de Histórico)****
+ 9. **Reset vs. Revert vs. Checkout (Gerenciamento de Histórico)**
 
 - ****Reset****:
 
@@ -261,11 +262,11 @@ git checkout HEAD@{3}  # Retorna ao estado anterior de 3 referências atrás
 
 - git checkout <branch> ou git checkout <arquivo>
 
-**### 10. **Blame (Atribuir Autores a Linhas de Código)****
+ 10. **Blame (Atribuir Autores a Linhas de Código)**
 
 - ****Objetivo****: Ver quem modificou cada linha de um arquivo e em qual commit, facilitando a rastreabilidade de alterações.
 
-- ****Comando****: git blame <arquivo>
+- ****Comando****: ``git blame <arquivo>``
 
 Exemplo:
 
@@ -274,52 +275,52 @@ bash
 git blame README.md  # Mostra o autor e o commit de cada linha do arquivo README
 
 
-**### 11. **Tagging (Versões e Releases)****
+ 11. **Tagging (Versões e Releases)**
 
 - ****Objetivo****: Tags são usadas para marcar commits importantes, como lançamentos de versões.
 
-- ****Comando****: git tag <versao> ou git tag -a <versao> -m "Mensagem"
+- ****Comando****: ``git tag <versao>``ou``git tag -a <versao> -m "Mensagem"``
 
 Exemplo:
 
 bash
 
-git tag v1.0.0  # Criar tag simples
+``git tag v1.0.1``  # Criar tag simples
 
-git tag -a v1.0.0 -m "Lançamento da versão 1.0.0"  # Criar tag anotada
+``git tag -a v1.0.0 -m "Lançamento da versão 1.0.0"`` # Criar tag anotada
 
 
-Para enviar as tags para o repositório remoto: git push origin --tags
+Para enviar as tags para o repositório remoto:``git push origin --tag``
 
-**### 12. **Patch (Aplicar Diferenças em Código)****
+ 12. **Patch (Aplicar Diferenças em Código)**
 
 - ****Objetivo****: Gera um arquivo de diferenças (patch) entre commits ou branches que pode ser aplicado em outro repositório ou branch.
 
-- ****Comando****: git format-patch <branch> e git apply <patch-file>
+- ****Comando****:``git format-patch <branch> e git apply <patch-file>``
 
 Exemplo:
 
 bash
 
-git format-patch origin/main  # Gera patches desde a branch main
+``git format-patch origin/main``  # Gera patches desde a branch main
 
-git apply meu-patch.patch  # Aplica o patch
+``git apply meu-patch.patch``  # Aplica o patch
 
 
-**### 13. **GPG Commit Signing (Assinatura de Commits)****
+ 1.  **GPG Commit Signing (Assinatura de Commits)**
 
 - ****Objetivo****: Permite assinar commits com uma chave GPG para garantir sua autenticidade.
 
-- ****Comando****: git commit -S -m "mensagem"
-
+- ****Comando****: ``git commit -S -m "mensagem"``
+`
 Exemplo:
 
 bash
 
-git commit -S -m "Commit assinado"
+``git commit -S -m "Commit assinado``
 
 
-**### 14. **Filter-Branch (Reescrever Histórico Completo)****
+14. **Filter-Branch (Reescrever Histórico Completo)**
 
 - ****Objetivo****: Reescreve o histórico de commits do repositório, útil para remover dados sensíveis ou renomear arquivos em todo o histórico.
 
@@ -329,16 +330,16 @@ Exemplo:
 
 bash
 
-git filter-branch --tree-filter 'rm -rf arquivos_sensiveis/' HEAD
+``git filter-branch --tree-filter 'rm -rf arquivos_sensiveis/' HEAD~``
 
 
 Essas técnicas avançadas são usadas por desenvolvedores experientes para manter um histórico de commits limpo, eficiente e colaborativo, especialmente em equipes grandes e em projetos de longa duração.
 
-**### Estruturas de mensagem de um commit**
+**Estruturas de mensagem de um commit**
 
 Seguir padrões de nomenclatura e boas práticas para mensagens de commit no Git é fundamental para manter um histórico de commits claro e compreensível. Aqui estão algumas diretrizes e convenções comuns para escrever mensagens de commit eficazes:
 
-**### 1. **Estrutura da Mensagem de Commit****
+1. **Estrutura da Mensagem de Commit**
 
 Uma mensagem de commit geralmente é composta por três partes principais:
 
@@ -361,7 +362,7 @@ Adiciona suporte para autenticação de usuário
 Relacionado a: #123
 
 
-**### 2. **Uso de Verbos no Imperativo****
+ 2. **Uso de Verbos no Imperativo**
 
 As mensagens de commit devem ser escritas no imperativo, como se você estivesse dando uma ordem. Isso ajuda a transmitir claramente a ação que o commit realiza.
 
@@ -370,12 +371,12 @@ As mensagens de commit devem ser escritas no imperativo, como se você estivesse
 - ****Correto****: "Adiciona nova funcionalidade de busca"
 
 - ****Incorreto****: "Adicionado nova funcionalidade de busca"
-
-**### 3. **Mensagens Curta e Clara****
+- 
+ 3. **Mensagens Curta e Clara**
 
 - O cabeçalho deve ser curto e claro, descrevendo a mudança principal. Evite mensagens vagas como "Atualizações" ou "Correções".
 
-**### 4. **Incluir Referências a Problemas ou Tarefas****
+ 4. **Incluir Referências a Problemas ou Tarefas**
 
 Quando aplicável, inclua referências a problemas (issues) ou tarefas relacionadas no rodapé. Isso ajuda a rastrear as mudanças em relação a bugs ou funcionalidades.
 
@@ -386,11 +387,11 @@ Corrige erro na função de login
 Relacionado a: #456
 
 
-**### 5. **Seja Específico****
+ 5. **Seja Específico**
 
 Forneça detalhes suficientes no corpo da mensagem para que outros desenvolvedores possam entender a mudança sem ter que investigar o código.
 
-**### 6. **Use Categorias****
+ 6. **Use Categorias**
 
 Em projetos maiores, pode ser útil usar categorias no cabeçalho para identificar rapidamente o tipo de mudança. Algumas categorias comuns incluem:
 
@@ -415,21 +416,21 @@ feat: Adiciona suporte para múltiplos idiomas
 fix: Corrige falha ao carregar a página de perfil
 
 
-**### 7. **Revisão e Consistência****
+ 7. **Revisão e Consistência**
 
 - Revise suas mensagens de commit antes de confirmar, para garantir clareza e precisão.
 
 - Mantenha um estilo consistente ao longo do projeto. Se um padrão é estabelecido, todos devem segui-lo.
 
-**### 8. **Commit em Tamanhos Apropriados****
+ 8. **Commit em Tamanhos Apropriados**
 
 - Evite fazer commits que incluem muitas alterações não relacionadas. Cada commit deve representar uma única mudança ou um conjunto coerente de mudanças relacionadas.
 
-**### 9. **Dividir Commits em Etapas Lógicas****
+ 9. **Dividir Commits em Etapas Lógicas**
 
 - Se uma funcionalidade é complexa, considere dividir o trabalho em múltiplos commits que representem etapas lógicas, facilitando a revisão e o rastreamento de mudanças.
 
-**### 10. **Exemplo de Mensagens de Commit****
+ 10. **Exemplo de Mensagens de Commit**
 
 plaintext
 
@@ -460,7 +461,7 @@ Mencionar o início de um projeto em uma mensagem de commit deve ser feito de fo
 
 3. ****Rodapé**** (opcional): Incluir referências, como a issue que iniciou o projeto (se aplicável).
 
-**### Exemplo de Mensagem de Commit**
+** Exemplo de Mensagem de Commit**
 
 plaintext
 
@@ -483,13 +484,13 @@ Seguindo essas orientações, suas mensagens de commit ficarão claras e informa
 
 Para entrar no modo de edição de uma mensagem de commit no Git, você pode usar o seguinte comando:
 
-**### Editar a Mensagem do Último Commit**
+** Editar a Mensagem do Último Commit**
 
 Se você deseja editar a mensagem do último commit, use:
 
 bash
 
-git commit --amend
+``git commit --amen``
 
 
 Esse comando abrirá o editor de texto padrão do Git, onde você pode editar a mensagem do commit. Após fazer suas alterações, salve o arquivo e feche o editor. A nova mensagem será aplicada ao último commit.
@@ -504,7 +505,7 @@ Use o comando de rebase interativo para acessar os commits anteriores:
 
 bash
 
-git rebase -i HEAD~n
+``git rebase -i HEAD~``
 
 
 Onde n é o número de commits que você deseja ver (por exemplo, HEAD~3 para ver os últimos 3 commits).
@@ -535,7 +536,7 @@ Após editar a mensagem e salvar, o Git aplicará as alterações. Se não houve
 
 bash
 
-git config --global core.editor <editor>
+``git config --global core.editor <editor>``
 
 
 Substitua <editor> pelo editor desejado, como nano, vim ou code --wait (para Visual Studio Code).
