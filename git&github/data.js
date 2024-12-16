@@ -1,0 +1,1 @@
+console.log("Informações de cadatro de cliente")
