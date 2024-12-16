@@ -155,7 +155,7 @@ bash
 
 bash
 
-```git checkout feature-branch``
+``git checkout feature-branch``
 
 ``git rebase main``
 `
@@ -490,7 +490,7 @@ Se você deseja editar a mensagem do último commit, use:
 
 bash
 
-``git commit --amen``
+``git commit --amend``
 
 
 Esse comando abrirá o editor de texto padrão do Git, onde você pode editar a mensagem do commit. Após fazer suas alterações, salve o arquivo e feche o editor. A nova mensagem será aplicada ao último commit.
