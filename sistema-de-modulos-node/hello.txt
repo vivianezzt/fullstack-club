@@ -1,0 +1,2 @@
+Essa é a nossa primeira mensagem escrita com módulo fs!
+Essa é a nossa segunda mensagem escrita com módulo fs!
